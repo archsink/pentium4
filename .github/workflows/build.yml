@@ -30,7 +30,7 @@ jobs:
         git checkout main
         git pull
     - name: Set up QEMU
-      if: matrix.platform != 'linux/amd64'
+      if: matrix.platform != 'linux/amd64' && matrix.platform != 'linux/386'
       uses: docker/setup-qemu-action@v2
       with:
         platforms: ${{ matrix.platform }}
